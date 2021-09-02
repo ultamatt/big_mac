@@ -15,7 +15,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "cargo-cp-artifact": "^0.1"
+    "cargo-cp-artifact": "^0.1",
+    "node-pre-gyp": "^0.17.0",
+    "node-pre-gyp-github": "^1.4.3"
   },
   "repository": {
     "type": "git",
@@ -25,11 +27,11 @@
     "lib"
   ],
   "binary": {
-  "module_name": "index",
-  "host": "https://github.com/ultamatt/big_mac/releases/download/",
-  "remote_path": "{version}",
-  "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-  "module_path": "./native",
-  "pkg_path": "."
-},
+    "module_name": "index",
+    "host": "https://github.com/ultamatt/big_mac/releases/download/",
+    "remote_path": "{version}",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
+    "module_path": "./native",
+    "pkg_path": "."
+  }
 }
