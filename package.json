@@ -6,13 +6,13 @@
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build=false || npm run build-release",
     "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
-    "build-debug": "npm run move_index_node && npm run build --",
-    "build-release": "npm run move_index_node && npm run build -- --release",
+    "build-debug": "npm run build --",
+    "build-release": "npm run build -- --release",
     "move_index_node": "mv index.node native",
-    "package": "node-pre-gyp package",
-    "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
+    "package": "npm run move_index_node && node-pre-gyp package",
+    "upload-binary": "npm run package && node-pre-gyp-github publish",
     "test": "cargo test",
-    "clean": "rm -rf node_modules && rm -rf build && rm -rf target"
+    "clean": "rm -rf node_modules && rm -rf build && rm -rf target && rm -rf native && rm -f index.node"
   },
   "author": "",
   "license": "MIT",
