@@ -4,15 +4,32 @@
   "description": "Get mac addresses",
   "main": "index.node",
   "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
+    "package": "node-pre-gyp package",
+    "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
     "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
-    "install": "npm run build-release",
     "test": "cargo test"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "cargo-cp-artifact": "^0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultamatt/big_mac.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "binary": {
+  "module_name": "index",
+  "host": "https://github.com/ultamatt/big_mac/releases/download/",
+  "remote_path": "{version}",
+  "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
+  "module_path": "./native",
+  "pkg_path": "."
+},
 }
