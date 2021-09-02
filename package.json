@@ -5,12 +5,14 @@
   "main": "index.node",
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build=false || npm run build-release",
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build-debug": "npm run move_index_node && npm run build --",
+    "build-release": "npm run move_index_node && npm run build -- --release",
+    "move_index_node": "mv index.node native",
     "package": "node-pre-gyp package",
     "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
-    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
-    "build-debug": "npm run build --",
-    "build-release": "npm run build -- --release",
-    "test": "cargo test"
+    "test": "cargo test",
+    "clean": "rm -rf node_modules && rm -rf build && rm -rf target"
   },
   "author": "",
   "license": "MIT",
@@ -32,7 +34,6 @@
     "host": "https://github.com/ultamatt/big_mac/releases/download/",
     "remote_path": "{version}",
     "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
-    "module_path": "./native",
-    "pkg_path": "."
+    "module_path": "./native"
   }
 }
