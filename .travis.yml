@@ -1,15 +1,15 @@
 os:
   - linux
-  #- osx
+  - osx
 
 language: node_js
 
 node_js:
   - node
-  #- 14
-  #- 12
-  #- 10
-  #- 8
+  - 14
+  - 12
+  - 10
+  - 8
 
 cache: cargo
 
