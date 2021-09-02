@@ -4,7 +4,7 @@
   "description": "Get mac addresses",
   "main": "index.node",
   "scripts": {
-    "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
+    "install": "node-pre-gyp install --fallback-to-build=false || npm run build-release",
     "package": "node-pre-gyp package",
     "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
     "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "cargo-cp-artifact": "^0.1",
+    "neon": "^2.0.0",
     "node-pre-gyp": "^0.17.0",
     "node-pre-gyp-github": "^1.4.3"
   },
