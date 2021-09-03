@@ -1,6 +1,6 @@
 {
   "name": "big_mac",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Get mac addresses",
   "main": "index.node",
   "scripts": {
@@ -8,8 +8,7 @@
     "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
-    "move_index_node": "[ ! -f index.node ] || mv index.node native",
-    "package": "npm run move_index_node && node-pre-gyp package",
+    "package": "cp index.node native && node-pre-gyp package",
     "upload-binary": "npm run package && node-pre-gyp-github publish",
     "everything": "npm run clean && npm install && npm test && npm run upload-binary",
     "test": "cargo test",
