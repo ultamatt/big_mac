@@ -1,6 +1,6 @@
 {
   "name": "big_mac",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Get mac addresses",
   "main": "index.node",
   "scripts": {
@@ -8,10 +8,12 @@
     "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
-    "move_index_node": "mv index.node native",
+    "move_index_node": "[ ! -f index.node ] || mv index.node native",
     "package": "npm run move_index_node && node-pre-gyp package",
     "upload-binary": "npm run package && node-pre-gyp-github publish",
+    "everything": "npm run clean && npm install && npm test && npm run upload-binary",
     "test": "cargo test",
+    "env_test": "console.log(process.env)",
     "clean": "rm -rf node_modules && rm -rf build && rm -rf target && rm -rf native && rm -f index.node"
   },
   "author": "",
@@ -20,7 +22,7 @@
     "cargo-cp-artifact": "^0.1",
     "neon": "^2.0.0",
     "node-pre-gyp": "^0.17.0",
-    "node-pre-gyp-github": "^1.4.3"
+    "node-pre-gyp-github": "git://github.com:ultamatt/node-pre-gyp-github.git#43c2d25"
   },
   "repository": {
     "type": "git",
