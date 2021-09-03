@@ -1,9 +1,9 @@
 use neon::prelude::*;
 use mac_address::get_mac_address;
-
-fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
-    Ok(cx.string("hello node"))
-}
+// 
+// fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
+//     Ok(cx.string("hello node"))
+// }
 
 fn get_mac(mut cx: FunctionContext) -> JsResult<JsString> {
     let results = match get_mac_address() {
@@ -20,7 +20,7 @@ fn get_mac(mut cx: FunctionContext) -> JsResult<JsString> {
 
 #[neon::main]
 fn main(mut cx: ModuleContext) -> NeonResult<()> {
-    cx.export_function("hello", hello)?;
+    // cx.export_function("hello", hello)?;
     cx.export_function("get_mac", get_mac)?;
     Ok(())
 }
