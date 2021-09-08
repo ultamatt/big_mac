@@ -23,7 +23,7 @@
   "devDependencies": {
     "cargo-cp-artifact": "^0.1",
     "neon": "^2.0.0",
-    "node-pre-gyp-github": "git://github.com:ultamatt/node-pre-gyp-github.git#43c2d25"
+    "node-pre-gyp-github": "git://github.com:ultamatt/node-pre-gyp-github.git#e496182"
   },
   "repository": {
     "type": "git",
