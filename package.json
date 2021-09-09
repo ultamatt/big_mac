@@ -1,7 +1,7 @@
 {
   "name": "big_mac",
   "version": "0.1.4",
-  "description": "Get mac addresses",
+  "description": "Get mac addresses from rust with neon",
   "main": "index.node",
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build=false || npm run build-release",
