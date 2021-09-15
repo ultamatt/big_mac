@@ -1,6 +1,6 @@
 {
   "name": "big_mac",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Get mac addresses from rust with neon",
   "main": "index.node",
   "scripts": {
