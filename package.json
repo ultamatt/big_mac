@@ -10,8 +10,9 @@
     "build-release": "npm run build -- --release",
     "package": "cp index.node native && node-pre-gyp package",
     "upload-binary": "npm run package && node-pre-gyp-github publish",
-    "everything": "npm run clean && npm i && npm run install && npm test && npm run upload-binary",
+    "everything": "npm run load_env && npm run clean && npm i && npm run install && npm test && npm run upload-binary",
     "test": "cargo test",
+    "load_env": "export $(cat .env | xargs)",
     "env_test": "console.log(process.env)",
     "clean": "rm -rf node_modules && rm -rf build && rm -rf target && rm -rf native && rm -f index.node"
   },
