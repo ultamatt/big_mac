@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const big_mac = require('big_mac')
 const path = require('path');
 
 function createWindow () {
