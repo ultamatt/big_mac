@@ -1,4 +1,5 @@
-let big_mac = require('../');
+//let big_mac = require('../');
+let big_mac = require('big_mac');
 
 console.log(big_mac);
 

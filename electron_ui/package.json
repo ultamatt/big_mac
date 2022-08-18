@@ -21,7 +21,7 @@
     "electron-rebuild": "^3.2.3"
   },
   "dependencies": {
-    "big_mac": "^0.1.4",
+    "big_mac": "^0.1.5",
     "electron-squirrel-startup": "^1.0.0"
   },
   "config": {

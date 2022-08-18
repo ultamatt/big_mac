@@ -405,10 +405,10 @@
   "resolved" "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz"
   "version" "1.5.1"
 
-"big_mac@^0.1.4":
-  "integrity" "sha512-Ox13KhuAUwbPOMVWE5OxNc+hKukNckij4kTMRHaOllKYNe13+iUBK4YGFmgTLXWejYCc3tgaQj74GMwSHr6STw=="
-  "resolved" "https://registry.npmjs.org/big_mac/-/big_mac-0.1.4.tgz"
-  "version" "0.1.4"
+"big_mac@^0.1.5":
+  "integrity" "sha512-jD1ZUF6P0VLXkMJGdCy7S/3zRIyE486n6AABoW1VK+YYY/d/lbn1K0oTchkn7QwUm++RpV0jdxONCY2Fg6w6eA=="
+  "resolved" "https://registry.npmjs.org/big_mac/-/big_mac-0.1.5.tgz"
+  "version" "0.1.5"
   dependencies:
     "node-pre-gyp" "^0.17.0"
 

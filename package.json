@@ -9,7 +9,7 @@
     "build-debug": "npm run build --",
     "build-release": "npm run build -- --release",
     "package": "cp index.node native && node-pre-gyp package",
-    "upload-binary": "npm run package && node-pre-gyp-github publish",
+    "upload-binary": "npm run package && node-pre-gyp-github publish --release",
     "everything": "npm run load_env && npm run clean && npm i && npm run install && npm test && npm run upload-binary",
     "test": "cargo test",
     "load_env": "export $(cat .env | xargs)",
